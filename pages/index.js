@@ -45,61 +45,54 @@ const trendingProducts = [
   {
     id: 1,
     name: 'LEGO® Rolling Tray',
-    color: 'Purple',
+    color: 'Cool Blue',
     price: '£8.99',
-    href: '#',
-    imageSrc: 'https://i.imgur.com/P2JHvAE.png',
+    href: '/product',
+    imageSrc: 'https://i.imgur.com/LG0pwZK.png',
     imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
     availableColors: [
-      { name: 'Purple', colorBg: '#977EB6' },
-      { name: 'Blue', colorBg: '#3B68BB' },
-      { name: 'Green', colorBg: '#4A9268' },
+      { name: 'Blue', colorBg: '#4A73C5' }, 
     ],
   },
   {
     id: 2,
     name: 'LEGO® Rolling Tray',
-    color: 'Blue',
+    color: 'Fuchsia Pink',
     price: '£8.99',
     href: '#',
-    imageSrc: 'https://i.imgur.com/jsGoFNc.png',
+    imageSrc: 'https://i.imgur.com/RmU8cWw.png',
     imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
     availableColors: [
-      { name: 'Purple', colorBg: '#977EB6' },
-      { name: 'Blue', colorBg: '#3B68BB' },
-      { name: 'Green', colorBg: '#4A9268' },
+      { name: 'Purple', colorBg: '#63365D' },
     ],
   },
   {
     id: 3,
-    name: 'LEGO® Rolling Tray (Translucent)',
-    color: 'Translucent-Blue',
-    price: '£12.99',
+    name: 'LEGO® Rolling Tray',
+    color: 'Lava Red',
+    price: '£8.99',
     href: '#',
-    imageSrc: 'https://i.imgur.com/uCoA4m8.png',
+    imageSrc: 'https://i.imgur.com/ws4yrFd.png',
     imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
     availableColors: [
-      { name: 'Translucent-Blue', colorBg: '#44469D' },
-      { name: 'Translucent-Green', colorBg: '#FDE68A' },
-      { name: 'Translucent-Clear', colorBg: '#f7f7f7' },
+      { name: 'Red', colorBg: '#8C1414' },
     ],
   },
   {
     id: 4,
-    name: 'LEGO® Rolling Tray (Translucent)',
-    color: 'Translucent-Green',
-    price: '£12.99',
+    name: 'LEGO® Rolling Tray',
+    color: 'Lush Green',
+    price: '£8.99',
     href: '#',
-    imageSrc: 'https://i.imgur.com/MNlGbYA.png',
+    imageSrc: 'https://i.imgur.com/DIUFN6H.png',
     imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
     availableColors: [
-      { name: 'Translucent-Green', colorBg: '#44469D' },
-      { name: 'Translucent-Blue', colorBg: '#44469D' },
-      { name: 'Translucent-Clear', colorBg: '#f7f7f7' },
+      { name: 'Green', colorBg: '#24613E' },
     ],
   },
   // More products...
 ]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -375,7 +368,7 @@ export default function Example() {
                       <span className="sr-only">Workflow</span>
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                        src="https://i.imgur.com/RG1aulX.png"
                         alt=""
                       />
                     </a>
@@ -610,27 +603,27 @@ export default function Example() {
                   {trendingProducts.map((product) => (
                     <li key={product.id} className="w-64 inline-flex flex-col text-center lg:w-auto">
                       <div className="group relative">
-                        <div className="w-full bg-gray-100 rounded-md overflow-hidden aspect-w-1 aspect-h-1">
+                        <div className="w-full bg-gray-100 rounded-md overflow-hidden aspect-w-1 aspect-h-1 ">
                           <img
                             src={product.imageSrc}
                             alt={product.imageAlt}
-                            className="w-full h-full object-center object-cover transition-all ease-in duration-300 group-hover:animate-[wiggle_1s_ease-in-out_infinite]"
+                            className="w-full h-full object-center group-active:opacity-75 group-hover:animate-[extremescope_4s_ease-in-out_infinite] object-cover transition-all ease-in duration-300 animate-[wiggle_10s_ease-in-out_infinite]"
                           />
                         </div>
-                        <div className="mt-6">
+                        <div className="mt-3">
                           <h3 className="mt-1 font-semibold text-gray-900">
                             <a href={product.href}>
                               <span className="absolute inset-0" />
                               {product.name}
                             </a>
                           </h3>
-                          <p className="text-sm text-gray-500">{product.color}</p>
+                          <p className="font-thin text-gray-500">{product.color}</p>
                           <p className="mt-1 text-gray-900">{product.price}</p>
                         </div>
                       </div>
 
                       <h4 className="sr-only">Available colors</h4>
-                      <ul role="list" className="mt-auto pt-6 flex items-center justify-center space-x-3">
+                      <ul role="list" className="mt-auto mb-3 pt-3 flex items-center justify-center space-x-3">
                         {product.availableColors.map((color) => (
                           <li
                             key={color.name}
